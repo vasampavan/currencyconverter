@@ -1,0 +1,50 @@
+/* Container styling */
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    font-family: Arial, sans-serif;
+    background-color: #c5ded9;
+    border-radius: 10px;
+}
+
+/* Input and select row */
+.inputandselect{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    
+}
+
+/* Dropdowns */
+select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* Inputs */
+input[type="number"] {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 150px;
+    font-size: 1rem;
+}
+
+/* Add a little transition for smoother UX */
+select, input {
+    transition: all 0.2s ease-in-out;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 4px rgba(0,123,255,0.5);
+}

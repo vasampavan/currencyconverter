@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import './currency.css'
 function Currency(){
     const URL="https://v6.exchangerate-api.com/v6/008e365653b9bf3e79eec5da/latest/USD"
     const [amount1,setAmount1]=useState('')
@@ -34,20 +34,24 @@ function Currency(){
         }
     },[amount1,currency1,currency2,exchangerate])
     return(
+        <>
+         <h1>Currency Converter</h1>
         <div>
-            <div>
-                <select name="" id="" value={currency1} onChange={(e)=>setCurrency1(e.target.value)}>{Object.keys(exchangerate).map((country)=>(
+            
+            <div className="inputandselect">
+                <select  name="" id="" value={currency1} onChange={(e)=>setCurrency1(e.target.value)}>{Object.keys(exchangerate).map((country)=>(
                  <option key={country} value={country}>{country}</option>   
                 ))}</select>
                 <input type="number" name="" id="" value={amount1} onChange={(e)=>setAmount1(e.target.value)} />
             </div>
-             <div>
+             <div className="inputandselect">
                 <select name="" id="" value={currency2} onChange={(e)=>setCurrency2(e.target.value)}>{Object.keys(exchangerate).map((country)=>(
                  <option key={country} value={country}>{country}</option>   
                 ))}</select>
                 <input type="number" name="" id="" value={amount2} onChange={(e)=>setAmount2(e.target.value)} />
             </div>
         </div>
+        </>
     )
 }
 export default Currency
